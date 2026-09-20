@@ -3,6 +3,7 @@
 #include "hardware/gpio.h"
 #include "led.h"
 #include "log.h"
+#include "device.h"
 
 
 
@@ -30,6 +31,9 @@ void handle_command(int command) {
 	}
 	else if (command == 'v') {
 		log_version();
+	}
+	else if (command == 'i') {
+		device_info();
 	}
 	else {
 		LOG_ERR("unknown command: %c\n", command);
